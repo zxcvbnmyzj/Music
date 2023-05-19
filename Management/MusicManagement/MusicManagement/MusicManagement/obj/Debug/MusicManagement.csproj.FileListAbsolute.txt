@@ -1,0 +1,16 @@
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\bin\Debug\MusicManagement.exe.config
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\bin\Debug\MusicManagement.exe
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\bin\Debug\MusicManagement.pdb
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\bin\Debug\Service.dll
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\bin\Debug\Service.pdb
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\obj\Debug\MusicManagement.csproj.AssemblyReference.cache
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\obj\Debug\MusicManagement.Form1.resources
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\obj\Debug\MusicManagement.Properties.Resources.resources
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\obj\Debug\MusicManagement.csproj.GenerateResource.cache
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\obj\Debug\MusicManagement.csproj.CoreCompileInputs.cache
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\obj\Debug\MusicManagement.csproj.CopyComplete
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\obj\Debug\MusicManagement.exe
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\obj\Debug\MusicManagement.pdb
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\bin\Debug\Newtonsoft.Json.dll
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\bin\Debug\Newtonsoft.Json.xml
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\MusicManagement\obj\Debug\MusicManagement.AddMusicForm.resources

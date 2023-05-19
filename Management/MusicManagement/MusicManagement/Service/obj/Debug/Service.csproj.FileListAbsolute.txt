@@ -1,0 +1,9 @@
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\Service\bin\Debug\Service.dll
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\Service\bin\Debug\Service.pdb
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\Service\obj\Debug\Service.csproj.AssemblyReference.cache
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\Service\obj\Debug\Service.dll
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\Service\obj\Debug\Service.pdb
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\Service\bin\Debug\Newtonsoft.Json.dll
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\Service\bin\Debug\Newtonsoft.Json.xml
+E:\backEnd\MusicProjoect\Management\MusicManagement\MusicManagement\Service\obj\Debug\Service.csproj.CopyComplete
