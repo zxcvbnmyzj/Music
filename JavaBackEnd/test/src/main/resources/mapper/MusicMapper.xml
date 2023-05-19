@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yohane.test.dao.mybatis.MusicMapper">
+
+    <select id="getAllMusic" resultType="com.yohane.test.dao.Data.DTO.Music">
+        select id,musicName,musicSinger from music
+    </select>
+
+    <select id="selectMusic" resultType="java.lang.Integer">
+        select id from music where musicName = #{name} and musicSinger = #{singer}
+    </select>
+
+</mapper>

@@ -1,0 +1,76 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yohane.test.dao.mybatis.UserMapper">
+    <resultMap id="user" type="com.yohane.test.dao.Data.pojo.User">
+        <result column="userId" property="id"/>
+        <result column="userName" property="name"/>
+        <result column="userPass" property="password"/>
+        <result column="userSex" property="sex"/>
+        <result column="userEmail" property="email"/>
+        <result column="userState" property="state"/>
+    </resultMap>
+
+    
+<!--    &lt;!&ndash;二级缓存&ndash;&gt;-->
+<!--    <cache type="com.yohane.test.dao.redis.RedisCache"/>-->
+
+    <select id="selectByOne" parameterType="java.lang.String" resultMap="user">
+        select * from user where userName = #{name}
+    </select>
+
+    <select id="loginCheck" resultType="java.lang.Integer">
+        select userId from user where userName = #{name} AND userPass = #{pass}
+    </select>
+
+    <select id="select" parameterType="java.lang.Integer" resultMap="user">
+        select * from user where userId = #{id}
+    </select>
+
+    <select id="selectAll" resultMap="user">
+        select * from user where userState != '已删除'
+    </select>
+
+    <update id="update" parameterType="com.yohane.test.dao.Data.pojo.User">
+        update user set stuName = #{userName} where id = #{userId}
+    </update>
+
+    <select id="selectUserPage" resultMap="user">
+        select * from user
+        <where>
+            <if test="keyword != null and keyword != ''">
+                or userId like CONCAT('%',#{keyword},'%')
+                or userName like CONCAT('%',#{keyword},'%')
+                or userPass like CONCAT('%',#{keyword},'%')
+                or userSex like CONCAT('%',#{keyword},'%')
+                or userEmail like CONCAT('%',#{keyword},'%')
+            </if>
+            and userState != '已删除'
+        </where>
+
+    </select>
+
+    <insert id="addUser" parameterType="com.yohane.test.dao.Data.pojo.User">
+        insert into user (userName,userPass,userSex,userEmail,userState) values (#{name},#{password},#{sex},#{email},'正常')
+    </insert>
+
+    <update id="updateUser" parameterType="com.yohane.test.dao.Data.pojo.User">
+        update user set userName = #{name},userPass = #{password},
+        userSex = #{sex},userEmail = #{email},userState = #{state}
+        where userId = #{id}
+    </update>
+
+    <update id="deleteUser" parameterType="java.lang.Integer">
+        update user set userState = '已删除' where userId = #{id}
+    </update>
+    
+    <update id="batchDelete" parameterType="java.util.List">
+        update user set userState = '已删除'
+        where userId in
+        <foreach collection="list" item="id" index="index" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
+
+</mapper>

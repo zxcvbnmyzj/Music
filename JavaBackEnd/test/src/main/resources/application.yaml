@@ -1,0 +1,28 @@
+server:
+  port: 6060
+  servlet:
+    context-path: /yohane
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 5050
+    jedis:
+      pool:
+        max-idle: 100
+        min-idle: 10
+        max-active: 100
+    timeout: 5000
+    database: 0
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/redisuser?characterEncoding=utf-8
+#mybatis:
+#  type-aliases-package: com.yohane.test.dao.Data.pojo
+#  mapper-locations: classpath:mapper/*.xml
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.yohane.test.dao.Data.pojo
+  configuration:
+    cache-enabled: true
