@@ -55,5 +55,10 @@ namespace MusicManagement
             AddMusicForm addMusicForm = new AddMusicForm();
             addMusicForm.ShowDialog();
         }
+
+        private void menu_group_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

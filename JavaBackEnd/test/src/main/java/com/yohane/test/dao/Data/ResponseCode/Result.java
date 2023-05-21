@@ -1,7 +1,10 @@
 package com.yohane.test.dao.Data.ResponseCode;
 
+import com.sun.xml.internal.ws.developer.Serialization;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * Created on 2023/4/13
@@ -12,7 +15,9 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class Result {
+public class Result implements Serializable {
+
+    private static final long serialVersionUID = -1160305195842100549L;
 
     private Integer code;
 

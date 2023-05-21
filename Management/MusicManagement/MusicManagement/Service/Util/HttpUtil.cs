@@ -123,7 +123,7 @@ namespace Service.Util
                             }
                             else
                             {
-                                label.Text = int.Parse(Math.Truncate(percentage).ToString()).ToString()));
+                                label.Text = int.Parse(Math.Truncate(percentage).ToString()).ToString();
                             }
                         } while (bytesRead > 0);
                     }
@@ -136,7 +136,10 @@ namespace Service.Util
             {
                 if (resp != null)
                     resp.Close();
-                if()
+                if (remoteStream != null)
+                    remoteStream.Close();
+                if (localStream != null)
+                    localStream.Close();
             }
         }
     }

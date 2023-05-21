@@ -44,12 +44,28 @@ public class MusicServiceImpl implements MusicService {
         Result rs = null;
         Integer result;
         try {
-            if((result = musicMapper.selectMusic(name,singer)) >= 0)
+            if((result = musicMapper.selectMusic(name,singer) == null
+                    ? 0 : musicMapper.selectMusic(name,singer)) > 0)
                 return new Result(ResponseCode.BAD_REQUEST,"存在重复的歌曲",result);
             rs = new Result(ResponseCode.OK,"success",result);
         }catch (Exception e){
             e.printStackTrace();
             rs = new Result(ResponseCode.SERVER_ERROR,"error",null);
+        }
+        return rs;
+    }
+
+    @Override
+    public Result addMusicOfList(List<Music> musicList) {
+        Result rs = null;
+        Integer result;
+        try {
+            if((result = musicMapper.AddListMusic(musicList)) <= 0)
+                return new Result(ResponseCode.BAD_REQUEST,"添加失败,请稍后重试",result);
+            rs = new Result(ResponseCode.OK,"success",result);
+        }catch (Exception e){
+            e.printStackTrace();
+            rs = new Result(ResponseCode.SERVER_ERROR,"服务器错误",null);
         }
         return rs;
     }

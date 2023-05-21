@@ -38,6 +38,7 @@ namespace MusicManagement
             this.bt_submit_list = new System.Windows.Forms.Button();
             this.Add_proBar = new System.Windows.Forms.ProgressBar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.bt_selectMp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.WaitMusicList_View)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +79,7 @@ namespace MusicManagement
             // bt_AddList
             // 
             this.bt_AddList.Font = new System.Drawing.Font("宋体", 12F);
-            this.bt_AddList.Location = new System.Drawing.Point(37, 168);
+            this.bt_AddList.Location = new System.Drawing.Point(37, 222);
             this.bt_AddList.Name = "bt_AddList";
             this.bt_AddList.Size = new System.Drawing.Size(212, 33);
             this.bt_AddList.TabIndex = 4;
@@ -99,7 +100,7 @@ namespace MusicManagement
             // bt_submit_list
             // 
             this.bt_submit_list.Font = new System.Drawing.Font("宋体", 12F);
-            this.bt_submit_list.Location = new System.Drawing.Point(37, 229);
+            this.bt_submit_list.Location = new System.Drawing.Point(37, 290);
             this.bt_submit_list.Name = "bt_submit_list";
             this.bt_submit_list.Size = new System.Drawing.Size(212, 33);
             this.bt_submit_list.TabIndex = 6;
@@ -119,11 +120,23 @@ namespace MusicManagement
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
+            // bt_selectMp
+            // 
+            this.bt_selectMp.Font = new System.Drawing.Font("宋体", 12F);
+            this.bt_selectMp.Location = new System.Drawing.Point(37, 160);
+            this.bt_selectMp.Name = "bt_selectMp";
+            this.bt_selectMp.Size = new System.Drawing.Size(212, 33);
+            this.bt_selectMp.TabIndex = 8;
+            this.bt_selectMp.Text = "导入音频";
+            this.bt_selectMp.UseVisualStyleBackColor = true;
+            this.bt_selectMp.Click += new System.EventHandler(this.bt_selectMp_Click);
+            // 
             // AddMusicForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bt_selectMp);
             this.Controls.Add(this.Add_proBar);
             this.Controls.Add(this.bt_submit_list);
             this.Controls.Add(this.WaitMusicList_View);
@@ -152,5 +165,6 @@ namespace MusicManagement
         private System.Windows.Forms.Button bt_submit_list;
         private System.Windows.Forms.ProgressBar Add_proBar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button bt_selectMp;
     }
 }

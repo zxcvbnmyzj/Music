@@ -1,6 +1,9 @@
 package com.yohane.test.service.MainService;
 
+import com.yohane.test.dao.Data.DTO.Music;
 import com.yohane.test.dao.Data.ResponseCode.Result;
+
+import java.util.List;
 
 /**
  * Created on 2023/5/17
@@ -15,4 +18,5 @@ public interface MusicService {
 
     Result selectMusic(String name,String singer);
 
+    Result addMusicOfList(List<Music> musicList);
 }

@@ -53,8 +53,8 @@ namespace MusicManagement
 
         private void SubDataLoad()
         {
-            if (!addService.addMusic((BindingList<Service.DAO.VO.Music>)WaitMusicList_View.DataSource))
-                return;
+            //if (!addService.addMusic((BindingList<Service.DAO.VO.Music>)WaitMusicList_View.DataSource))
+            //    return;
             Add_proBar.Step = 1;
             Graphics g = this.Add_proBar.CreateGraphics();
             lockControl();
@@ -65,7 +65,7 @@ namespace MusicManagement
                 Font font = new Font("Time new Roman", (float)10, FontStyle.Regular);
                 PointF pt = new PointF(this.Add_proBar.Width / 2 - 17, this.Add_proBar.Height / 2 - 7);
                 g.DrawString(str, font, Brushes.Black, pt);
-                Thread.Sleep(20);
+                Thread.Sleep(30);
             }
             UnLocakControl();
             MessageBox.Show("完成!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -96,6 +96,20 @@ namespace MusicManagement
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
 
+        }
+
+        private void bt_selectMp_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog op = new OpenFileDialog();
+            op.Multiselect = false;
+            op.Title = "选择音频";
+            op.Filter = "音频文件(*.mp3)|*.mp3";
+            op.RestoreDirectory = false;
+            if (op.ShowDialog() == DialogResult.OK)
+            {
+                string path = op.FileName;
+                MessageBox.Show(path);
+            }  
         }
     }
 }

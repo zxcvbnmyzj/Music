@@ -33,9 +33,10 @@ namespace MusicManagement
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menu_Add = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_group = new System.Windows.Forms.ToolStripMenuItem();
+            this.导入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MusicDataGrid = new System.Windows.Forms.DataGridView();
-            this.导入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.下载到本地ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MusicDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +47,8 @@ namespace MusicManagement
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menu_Add,
             this.menu_group,
-            this.导入ToolStripMenuItem});
+            this.导入ToolStripMenuItem,
+            this.下载到本地ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -65,6 +67,13 @@ namespace MusicManagement
             this.menu_group.Name = "menu_group";
             this.menu_group.Size = new System.Drawing.Size(53, 24);
             this.menu_group.Text = "分组";
+            this.menu_group.Click += new System.EventHandler(this.menu_group_Click);
+            // 
+            // 导入ToolStripMenuItem
+            // 
+            this.导入ToolStripMenuItem.Name = "导入ToolStripMenuItem";
+            this.导入ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.导入ToolStripMenuItem.Text = "导入";
             // 
             // contextMenuStrip1
             // 
@@ -82,11 +91,11 @@ namespace MusicManagement
             this.MusicDataGrid.Size = new System.Drawing.Size(765, 392);
             this.MusicDataGrid.TabIndex = 2;
             // 
-            // 导入ToolStripMenuItem
+            // 下载到本地ToolStripMenuItem
             // 
-            this.导入ToolStripMenuItem.Name = "导入ToolStripMenuItem";
-            this.导入ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
-            this.导入ToolStripMenuItem.Text = "导入";
+            this.下载到本地ToolStripMenuItem.Name = "下载到本地ToolStripMenuItem";
+            this.下载到本地ToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.下载到本地ToolStripMenuItem.Text = "下载到本地";
             // 
             // Form1
             // 
@@ -116,6 +125,7 @@ namespace MusicManagement
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.DataGridView MusicDataGrid;
         private System.Windows.Forms.ToolStripMenuItem 导入ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 下载到本地ToolStripMenuItem;
     }
 }
 

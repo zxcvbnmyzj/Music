@@ -20,7 +20,7 @@ public interface MusicMapper {
 
     Integer selectMusic(@Param("name") String name,@Param("singer") String singer);
 
-    Integer AddListMusic();
+    Integer AddListMusic(@Param("musics") List<Music> music);
 
 
 }

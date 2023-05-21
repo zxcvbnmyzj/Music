@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * Created on 2023/5/17
  *
@@ -14,7 +16,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Music {
+public class Music implements Serializable {
+
+    private static final long serialVersionUID = -4318432174393977278L;
 
     Integer id;
 

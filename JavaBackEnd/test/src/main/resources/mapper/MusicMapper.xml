@@ -12,4 +12,8 @@
         select id from music where musicName = #{name} and musicSinger = #{singer}
     </select>
 
+    <insert id="AddListMusic" parameterType="com.yohane.test.dao.Data.DTO.Music">
+        INSERT INTO music (musicName,)
+    </insert>
+
 </mapper>
