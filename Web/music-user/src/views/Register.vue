@@ -16,7 +16,7 @@
         <el-radio v-model="form.radio" label="2">girl</el-radio>
       </el-form-item>
       <el-form-item label="Phone Number:" prop="phoneNumber">
-        <el-input type="text" placeholder="phone number" v-model="form.phone"/>
+        <el-input type="text" placeholder="phone number" v-model="form.phoneNumber"/>
       </el-form-item>
       <el-form-item>
         <el-button v-on:click="register">Register</el-button>
@@ -30,44 +30,25 @@
 export default {
   name: 'Register',
   data () {
-    var checkPhone = (rule, value, callback) => {
-      let regPhone = null
-      let mobile = /^((13|14|15|17|18)[0-9]{1}\d{8})$/
-      let tel = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/
-      if (value !== null && value.charAt(0) === '0') {
-        regPhone = tel
-      } else if (value !== null && value.charAt(0) === '0') {
-        regPhone = mobile
-      }
-      if (regPhone === null) {
-        return callback(
-          new Error('Please enter a phone number')
-        )
-      } else if (!regPhone.test(value)) {
-        return callback(
-          new Error('Please enter the correct phone format, where landline format is Area code landline number ')
-        )
-      } else {
-        callback()
-      }
-    }
     return {
       form: {
         name: '',
         password: '',
         conPassword: '',
-        radio: '',
-        phone: ''
+        radio: '1',
+        phoneNumber: ''
       },
       rules: {
         name: [{required: true, message: 'Account cannot be empty', trigger: 'blur'}],
         password: [{required: true, message: 'Password cannot be empty', trigger: 'blur'}],
         conPassword: [{required: true, message: 'Confirm Password cannot be empty', trigger: 'blur'}],
-        phoneNumber: [ {
-          required: true,
-          validator: checkPhone,
-          trigger: 'blur'
-        }]
+        phoneNumber: [
+          {
+            required: true,
+            message: 'Please enter the correct phone number',
+            trigger: 'blur'
+          }
+        ]
       },
       responseResult: [],
       dialogVisible: false
@@ -75,9 +56,22 @@ export default {
   },
   methods: {
     close () {
+      this.$message.info('Returned')
       this.$router.push('/')
     },
     register () {
+      this.checkPassword()
+      this.checkPhoneNumber(this.form.phoneNumber)
+    },
+    checkPassword () {
+      if (this.form.password !== this.form.conPassword) {
+        this.$message.error('Password inconsistency')
+      }
+    },
+    checkPhoneNumber (phone) {
+      if (!/^1[3-9]\d{9}$/.test(phone)) {
+        this.$message.error('Please enter a valid phone number')
+      }
     }
   }
 }
